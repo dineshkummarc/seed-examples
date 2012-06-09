@@ -8,10 +8,11 @@ var buffer = view.buffer;
 
 window.signal.hide.connect(Gtk.main_quit);
 
-var begin = new Gtk.TextIter();
-buffer.get_start_iter (begin);
+var ret_begin = {}
 
-buffer.insert(begin, "Hello GtkTextView world.", -1);
+buffer.get_start_iter (ret_begin);
+
+buffer.insert(ret_begin.iter, "Hello GtkTextView world.", -1);
 
 window.add(view);
 window.show_all();
